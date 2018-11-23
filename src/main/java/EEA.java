@@ -1,11 +1,11 @@
-// Lab done by Khondoker Ahnaf Prio and Charles Menne
+package src.main.java;// Lab done by Khondoker Ahnaf Prio and Charles Menne
 
 import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class Main {
+public class EEA {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -23,7 +23,7 @@ public class Main {
      * @param r1
      * @return Map<String, BigInteger> containing values returned from extended Euclidean algorithm
      */
-    private static Map<String, BigInteger> extendedEuclidean(BigInteger r0, BigInteger r1) {
+    public static Map<String, BigInteger> extendedEuclidean(BigInteger r0, BigInteger r1) {
         // Storing values returned from extended Euclidean algorithm
         Map<String, BigInteger> euclidValues = new HashMap<>();
         euclidValues.put("r0", r0);
@@ -64,9 +64,15 @@ public class Main {
         return euclidValues;
     }
 
+    // Print out all values from EEA map
+    // Includes linear combination of values
     private static void printValues(Map<String, BigInteger> values) {
         for(Map.Entry<String, BigInteger> entry : values.entrySet()) {
             System.out.println(entry.getKey() + " = " + entry.getValue());
         }
+        System.out.println();
+        System.out.println("Linear combination:");
+        System.out.println(values.get("s") + " * " + values.get("r0") + " + " + values.get("t") + " * "
+                + values.get("r1") + " = gcd(" + values.get("r0") + ", " + values.get("r1") + ") = " + values.get("gcd"));
     }
 }
