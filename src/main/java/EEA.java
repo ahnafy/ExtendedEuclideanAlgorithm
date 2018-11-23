@@ -15,6 +15,20 @@ public class EEA {
         BigInteger r1 = new BigInteger(sc.nextLine());
 
         printValues(extendedEuclidean(r0, r1));
+
+        // Answers to Q1-4:
+
+        // Q1: gcd(11069529223, 188351587) = x     Answer: x = 105401
+        //printValues(extendedEuclidean(BigInteger.valueOf(11069529223L), BigInteger.valueOf(188351587)));
+
+        // Q2: 435985 * S + 288651 * T = 11       Answer: S = 7004, T = -10579
+        //printValues(extendedEuclidean(BigInteger.valueOf(435985), BigInteger.valueOf(288651)));
+
+        // Q3: 300 * x ≡ 1 mod 104759        Answer: x = 21301
+        //printValues(extendedEuclidean(BigInteger.valueOf(104759), BigInteger.valueOf(300)));
+
+        // Q4: 300 * x ≡ 1 mod 104003        Answer: x = 46108
+        //printValues(extendedEuclidean(BigInteger.valueOf(104003), BigInteger.valueOf(300)));
     }
 
     /***
