@@ -38,7 +38,7 @@ public class FermatPrimality {
 
     public static void main (String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("We are running Fermat primality test\n");
+        System.out.println("We are running the Fermat primality test\n");
         FermatPrimality fp = new FermatPrimality();
         System.out.println("Input number");
         BigInteger num = scan.nextBigInteger();
