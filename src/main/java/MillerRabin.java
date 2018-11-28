@@ -24,7 +24,8 @@ public class MillerRabin {
         for (int i = 0; i < iteration; i++) {
             BigInteger r = BigInteger.valueOf(Math.abs(rand.nextInt()));
             BigInteger a = r.mod((n.subtract(BigInteger.valueOf(1))).add(BigInteger.valueOf(1))), temp = s;
-            BigInteger mod = modPow(a, temp, n);
+            BigInteger mod = a.modPow(temp, n);
+
             while (temp != n.subtract(BigInteger.valueOf(1)) && !mod.equals(BigInteger.valueOf(1)) && !mod.equals(n.subtract(BigInteger.valueOf(1)))) {
                 mod = mulMod(mod, mod, n);
                 temp = temp.multiply(BigInteger.valueOf(2));
@@ -34,16 +35,6 @@ public class MillerRabin {
             }
         }
         return true;
-    }
-
-    // Calculate large power of a large number mod-ing a large number
-    private BigInteger modPow(BigInteger a, BigInteger b, BigInteger c) {
-        BigInteger res = BigInteger.valueOf(1);
-        for (BigInteger i = BigInteger.valueOf(0); i.compareTo(b) < 0; i.add(BigInteger.valueOf(1))) {
-            res = res.multiply(a);
-            res = res.mod(c);
-        }
-        return res.mod(c);
     }
 
     // Calculate multiplication of two large numbers mod a large number
