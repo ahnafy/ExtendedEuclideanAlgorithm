@@ -35,9 +35,9 @@ public class FermatPrimality {
         Scanner scan = new Scanner(System.in);
         System.out.println("Running the Fermat primality test\n");
         FermatPrimality fp = new FermatPrimality();
-        System.out.println("Input number");
+        System.out.println("Input number: ");
         BigInteger num = scan.nextBigInteger();
-        System.out.println("\nInput number of k tests");
+        System.out.println("\nInput number of k tests: ");
 
         int k = scan.nextInt();
         boolean prime = fp.isPrime(num, k);
